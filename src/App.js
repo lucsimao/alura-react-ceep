@@ -1,4 +1,7 @@
 import './App.css';
+
+import { ListaDeNotas } from './components/ListaDeNotas';
+
 function App() {
   return (
     <section>
@@ -7,16 +10,7 @@ function App() {
         <textarea cols="30" rows="10" placeholder="Escreva sua nota..." />
         <button>Criar Nota</button>
       </form>
-      <ul>
-        <li>
-          <section>
-            <header>
-              <h3>Título</h3>
-            </header>
-            <p>Escreva Sua nota</p>
-          </section>
-        </li>
-      </ul>
+      <ListaDeNotas />
     </section>
   );
 }
