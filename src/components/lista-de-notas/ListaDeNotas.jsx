@@ -1,6 +1,6 @@
 import './style.css';
 
-import { CardNota } from '../card-nota/CardNota';
+import { CardNota } from '../card-nota';
 import { Component } from 'react';
 
 export class ListaDeNotas extends Component {
