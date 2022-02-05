@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Ceep - Gerenciador de Notas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the artefact of the course: [React: Entendendo como a biblioteca funciona](https://cursos.alura.com.br/course/react-js)
+
+## Contents
+
+- React
+- JSX
 
 ## Available Scripts
 
