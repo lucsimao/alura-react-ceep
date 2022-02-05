@@ -10,7 +10,6 @@ export class ListaDeNotas extends Component {
         {Array.of('Trabalho', 'Família', 'Estudos').map((categoria, index) => {
           return (
             <li className="lista-de-notas_item" key={index}>
-              <div>{categoria}</div>
               <CardNota />
             </li>
           );

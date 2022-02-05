@@ -7,7 +7,7 @@ import { ListaDeNotas } from './components/lista-de-notas';
 export default class App extends Component {
   render() {
     return (
-      <section>
+      <section className="conteudo">
         <FormularioCadastro />
         <ListaDeNotas />
       </section>
