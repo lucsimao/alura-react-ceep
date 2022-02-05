@@ -1,3 +1,4 @@
+import { CardNota } from './CardNota';
 import { Component } from 'react';
 
 export class ListaDeNotas extends Component {
@@ -5,12 +6,13 @@ export class ListaDeNotas extends Component {
     return (
       <ul>
         <li>
-          <section>
-            <header>
-              <h3>Título</h3>
-            </header>
-            <p>Escreva Sua nota</p>
-          </section>
+          <CardNota />
+        </li>
+        <li>
+          <CardNota />
+        </li>
+        <li>
+          <CardNota />
         </li>
       </ul>
     );
