@@ -2,17 +2,32 @@ import { Component } from 'react';
 import './style.css';
 
 export class FormularioCadastro extends Component {
-  constructor() {
+  constructor(props) {
+    super(props);
     this.titulo = '';
+    this.texto = '';
   }
 
   handleMudancaTitulo(evento) {
+    evento.stopPropagation();
     this.titulo = evento?.target?.value;
+  }
+
+  handleMudancaTexto(evento) {
+    evento.stopPropagation();
+    this.texto = evento?.target?.value;
+  }
+
+  criarNota(evento) {
+    evento.preventDefault();
+    evento.stopPropagation();
+    console.log(`uma nova nova foi criada ${this.titulo} ${this.texto}`);
+    this.props.criarNota(this.titulo, this.texto);
   }
 
   render() {
     return (
-      <form className="form-cadastro">
+      <form className="form-cadastro" onSubmit={this.criarNota.bind(this)}>
         <input
           className="form-cadastro_input"
           type="text"
@@ -24,6 +39,7 @@ export class FormularioCadastro extends Component {
           cols="30"
           rows="15"
           placeholder="Escreva sua nota..."
+          onChange={this.handleMudancaTexto.bind(this)}
         />
         <button className="form-cadastro_input form-cadastro_submit">
           Criar Nota
