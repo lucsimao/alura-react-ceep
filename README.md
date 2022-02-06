@@ -6,6 +6,13 @@ This project is the artefact of the course: [React: Entendendo como a biblioteca
 
 - React
 - JSX
+- OnChange
+- Bind
+- Props
+- State
+- Reset Cs
+- Components
+- ClassName, OnChange, OnSubmit
 
 ## Available Scripts
 
