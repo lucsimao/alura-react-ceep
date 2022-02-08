@@ -1,6 +1,7 @@
-import { Component } from 'react';
-import { CardNota } from '../card-nota';
 import './style.css';
+
+import { CardNota } from '../card-nota';
+import { Component } from 'react';
 
 export class ListaDeNotas extends Component {
   render() {
@@ -9,7 +10,12 @@ export class ListaDeNotas extends Component {
         {this.props.notas.map((nota, index) => {
           return (
             <li className="lista-de-notas_item" key={index}>
-              <CardNota titulo={nota.titulo} texto={nota.texto} />
+              <CardNota
+                indice={index}
+                titulo={nota.titulo}
+                texto={nota.texto}
+                deletarNota={this.props.deletarNota.bind(this)}
+              />
             </li>
           );
         })}
