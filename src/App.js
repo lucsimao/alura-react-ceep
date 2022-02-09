@@ -1,6 +1,5 @@
-import './App.css';
-
 import { Component } from 'react';
+import './App.css';
 import { FormularioCadastro } from './components/formulario-cadastro';
 import { ListaDeCategorias } from './components/lista-de-categorias';
 import { ListaDeNotas } from './components/lista-de-notas';
@@ -35,7 +34,10 @@ export default class App extends Component {
   render() {
     return (
       <section className="conteudo">
-        <FormularioCadastro criarNota={this.criarNota.bind(this)} />
+        <FormularioCadastro
+          categorias={this.state.categorias}
+          criarNota={this.criarNota.bind(this)}
+        />
         <main className="conteudo-principal">
           <ListaDeCategorias
             adicionarCategoria={this.adicionarCategoria.bind(this)}
