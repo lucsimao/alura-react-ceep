@@ -2,6 +2,7 @@ import './App.css';
 
 import { Component } from 'react';
 import { FormularioCadastro } from './components/formulario-cadastro';
+import { ListaDeCategorias } from './components/lista-de-categorias';
 import { ListaDeNotas } from './components/lista-de-notas';
 
 export default class App extends Component {
@@ -9,7 +10,14 @@ export default class App extends Component {
     super();
     this.state = {
       notas: [],
+      categorias: [],
     };
+  }
+
+  adicionarCategoria(categoria) {
+    this.state.categorias.push(categoria);
+    this.setState(this.state);
+    console.log(`uma nova categoria foi criada ${this.state}`);
   }
 
   criarNota(titulo, texto) {
@@ -28,10 +36,16 @@ export default class App extends Component {
     return (
       <section className="conteudo">
         <FormularioCadastro criarNota={this.criarNota.bind(this)} />
-        <ListaDeNotas
-          notas={this.state.notas}
-          deletarNota={this.deletarNota.bind(this)}
-        />
+        <main className="conteudo-principal">
+          <ListaDeCategorias
+            adicionarCategoria={this.adicionarCategoria.bind(this)}
+            categorias={this.state.categorias}
+          />
+          <ListaDeNotas
+            notas={this.state.notas}
+            deletarNota={this.deletarNota.bind(this)}
+          />
+        </main>
       </section>
     );
   }
