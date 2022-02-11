@@ -14,6 +14,7 @@ export class ListaDeNotas extends Component {
                 indice={index}
                 titulo={nota.titulo}
                 texto={nota.texto}
+                categoria={nota.categoria}
                 deletarNota={this.props.deletarNota.bind(this)}
               />
             </li>

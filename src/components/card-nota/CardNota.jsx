@@ -15,6 +15,7 @@ export class CardNota extends Component {
         <header className="card-nota_header">
           <h3 className="card-nota_title">{this.props.titulo}</h3>
           <DeleteSVG onClick={this.props.deletarNota} />
+          <h4>{this.props.categoria}</h4>
         </header>
         <p className="card-nota_text">{this.props.texto}</p>
       </section>
