@@ -3,10 +3,23 @@ import './style.css';
 import { Component } from 'react/cjs/react.development';
 
 export class ListaDeCategorias extends Component {
+  constructor() {
+    super();
+    this.state = { categorias: [] };
+  }
+
+  componentDidMount() {
+    this.props.categorias.inscrever(this.novasCategorias.bind(this));
+  }
+
+  novasCategorias(categorias) {
+    this.setState({ ...this.state, categorias });
+  }
+
   handleEventoInput(evento) {
     if (evento.key === 'Enter') {
       const valorCategoria = evento.target.value;
-      this.props.adicionarCategoria(valorCategoria);
+      this.props.categorias.adicionarCategoria(valorCategoria);
     }
   }
 
@@ -14,7 +27,7 @@ export class ListaDeCategorias extends Component {
     return (
       <section className="lista-categorias">
         <ul className="lista-categorias_lista">
-          {this.props.categorias.map((categoria, index) => {
+          {this.state.categorias.map((categoria, index) => {
             return (
               <li key={index} className="lista-categorias_item">
                 {categoria}

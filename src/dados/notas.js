@@ -17,15 +17,17 @@ export default class ArrayDeNotas {
   }
 
   notificar() {
-    this.inscritos.forEach((funcao) => funcao(this.categorias));
+    this.inscritos.forEach((funcao) => funcao(this.notas));
   }
 
   adicionarNota(titulo, texto, categoria) {
     const novaNota = new Nota(titulo, texto, categoria);
     this.notas.push(novaNota);
+    this.notificar();
   }
 
-  apagarNotas(indice) {
+  apagarNota(indice) {
     this.notas.splice(indice, 1);
+    this.notificar();
   }
 }

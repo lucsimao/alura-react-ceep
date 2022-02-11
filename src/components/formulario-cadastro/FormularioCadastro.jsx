@@ -8,6 +8,15 @@ export class FormularioCadastro extends Component {
     this.titulo = '';
     this.texto = '';
     this.categoria = 'Sem Categoria';
+    this.state = { categorias: [] };
+  }
+
+  componentDidMount() {
+    this.props.categorias.inscrever(this.novasCategorias.bind(this));
+  }
+
+  novasCategorias(categorias) {
+    this.setState({ ...this.state, categorias });
   }
 
   handleMudancaTitulo(evento) {
@@ -28,8 +37,7 @@ export class FormularioCadastro extends Component {
   criarNota(evento) {
     evento.preventDefault();
     evento.stopPropagation();
-    console.log(`uma nova nova foi criada ${this.titulo} ${this.texto}`);
-    this.props.criarNota(this.titulo, this.texto, this.categoria);
+    this.props.notas.adicionarNota(this.titulo, this.texto, this.categoria);
   }
 
   render() {
@@ -40,8 +48,8 @@ export class FormularioCadastro extends Component {
           className="form-cadastro_input"
         >
           <option>Sem Categoria</option>
-          {this.props.categorias.map((categoria) => {
-            return <option>{categoria}</option>;
+          {this.props.categorias.categorias.map((categoria, index) => {
+            return <option key={index}>{categoria}</option>;
           })}
         </select>
         <input

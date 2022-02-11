@@ -17,19 +17,10 @@ export default class App extends Component {
   render() {
     return (
       <section className="conteudo">
-        <FormularioCadastro
-          categorias={this.categorias.categorias}
-          criarNota={this.notas.criarNota}
-        />
+        <FormularioCadastro categorias={this.categorias} notas={this.notas} />
         <main className="conteudo-principal">
-          <ListaDeCategorias
-            adicionarCategoria={this.categorias.adicionarCategoria}
-            categorias={this.categorias.categorias}
-          />
-          <ListaDeNotas
-            notas={this.notas.notas}
-            deletarNota={this.notas.apagarNotas}
-          />
+          <ListaDeCategorias categorias={this.categorias} />
+          <ListaDeNotas notas={this.notas} />
         </main>
       </section>
     );
