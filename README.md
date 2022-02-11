@@ -10,9 +10,17 @@ This project is the artefact of the course: [React: Entendendo como a biblioteca
 - Bind
 - Props
 - State
-- Reset Cs
+- Reset Css
 - Components
 - ClassName, OnChange, OnSubmit
+- Component LifeCycle
+- Observer
+  - subscribe
+  - unsubscribe
+- componentDidMount
+  - use setState just in componentDidMount
+- componentWillUnmount
+  - unsubscribe observers
 
 ## Available Scripts
 
