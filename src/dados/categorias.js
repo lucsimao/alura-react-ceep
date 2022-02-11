@@ -8,6 +8,10 @@ export default class Categorias {
     this.inscritos.push(funcao);
   }
 
+  desinscrever(funcao) {
+    this.inscritos = this.inscritos.filter((f) => f !== funcao);
+  }
+
   notificar() {
     this.inscritos.forEach((funcao) => funcao(this.categorias));
   }

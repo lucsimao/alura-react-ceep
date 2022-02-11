@@ -12,6 +12,10 @@ export class ListaDeCategorias extends Component {
     this.props.categorias.inscrever(this.novasCategorias.bind(this));
   }
 
+  componentWillUnmount() {
+    this.props.categorias.desinscrever(this.novasCategorias.bind(this));
+  }
+
   novasCategorias(categorias) {
     this.setState({ ...this.state, categorias });
   }

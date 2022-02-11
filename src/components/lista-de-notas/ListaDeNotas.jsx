@@ -12,6 +12,10 @@ export class ListaDeNotas extends Component {
     this.props.notas.inscrever(this.novasNotas.bind(this));
   }
 
+  componentWillUnmount() {
+    this.props.notas.desinscrever(this.novasNotas.bind(this));
+  }
+
   novasNotas(notas) {
     this.setState({ ...this.state, notas });
   }
