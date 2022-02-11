@@ -31,7 +31,7 @@ export class ListaDeNotas extends Component {
                 titulo={nota.titulo}
                 texto={nota.texto}
                 categoria={nota.categoria}
-                deletarNota={this.props.notas.apagarNota}
+                notas={this.props.notas}
               />
             </li>
           );
